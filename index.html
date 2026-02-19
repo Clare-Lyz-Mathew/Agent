@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo-Detective Bureau | Active Terminal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="crt-overlay">
+    <div class="scanline"></div>
+    <div class="terminal-content">
+        <header>
+            <div class="header-left">
+                <h1 class="glitch" data-text="NEO-DETECTIVE">NEO-DETECTIVE</h1>
+                <p class="subtitle">QUANTUM INVESTIGATION UNIT // 4.0.2</p>
+            </div>
+            <div class="header-right">
+                <div class="timer-container">
+                    <span class="label">SYSTEM TIME:</span>
+                    <span id="global-timer" class="neon-text">00:00:00</span>
+                </div>
+                <div class="status-indicator">
+                    <span class="pulse"></span>
+                    <span class="status-label">CONNECTED</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section id="case-board">
+                <div class="section-header">
+                    <h2>ACTIVE CASE FILES</h2>
+                    <div class="magnify-toggle">
+                        <span class="label">MAGNIFY MODE:</span>
+                        <div class="toggle-switch" id="magnify-toggle">OFF</div>
+                    </div>
+                </div>
+                <div class="case-grid" id="case-grid">
+                    <!-- Cases will be populated by JS -->
+                </div>
+            </section>
+        </main>
+
+        <section id="terminal-section">
+            <div class="terminal-header">
+                <span class="t-label">SESSION LOGS</span>
+                <span class="t-status">ENCRYPTED_STREAM_ACTIVE</span>
+            </div>
+            <div id="terminal-log">
+                <!-- Logs will be populated by JS -->
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-line"></div>
+            <p>&copy; 2077 N.D.B. // ENCRYPTED CONNECTION SECURE</p>
+        </footer>
+    </div>
+
+    <div id="case-modal" class="hidden">
+        <!-- Content injected by JS -->
+    </div>
+
+    <div id="agent-code-prompt" class="hidden">
+        <div class="code-prompt-box">
+            <div class="prompt-header">AGENT VERIFICATION REQUIRED</div>
+            <p class="prompt-desc">Enter your assigned agent code to activate enhanced scanning mode.</p>
+            <input type="password" id="agent-code-input" class="agent-input" placeholder="ENTER AGENT CODE..."
+                maxlength="10" autocomplete="off">
+            <button id="agent-code-submit" class="agent-submit">AUTHENTICATE</button>
+            <div id="agent-code-error" class="agent-error"></div>
+        </div>
+    </div>
+
+    <div id="magnify-overlay" class="hidden"></div>
+    <div id="magnifying-glass" class="hidden">
+        <div class="glass-inner">
+            <div class="crosshair"></div>
+            <div class="scan-bar"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
